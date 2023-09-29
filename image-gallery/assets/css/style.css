@@ -51,7 +51,7 @@ button {
   cursor: pointer;
 }
 .search::placeholder {
-  color: #3a3a3a;
+  color: #868686;
   font-size: 1em;
   transition: .5s;
 }
@@ -60,31 +60,35 @@ button {
   transform: scale(1.1);
   transition: 1s;
 }
-.search::-ms-clear {
-  background-color: black;
-  width: 100px;
-}
+
+
+
+
 
 .form {
   display: flex;
   position: relative;
+  align-items: center;
 }
 
 .btn {
   padding: 10px;
   position: absolute;
-  right: -20px;
+  right: -10px;
   z-index: 10;
   cursor: pointer;
+  
 }
-.btn:hover path {
-  fill: red;
+path {
+  transition: 1s;
 }
-.btn:hover line {
-  fill: red;
+.btn:hover path,
+.btn:active path {
+  fill: black;
 }
+
 .btn-search {
-right: 20px;
+right: 30px;
 }
 
 
@@ -115,3 +119,13 @@ right: 20px;
   z-index: 10;
   cursor: pointer;
 }
+
+
+input[type=submit]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=submit]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { display: none; }

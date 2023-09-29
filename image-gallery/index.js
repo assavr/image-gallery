@@ -5,21 +5,30 @@ const main = document.querySelector('.main');
 const form = document.querySelector('form')
 const search = document.querySelector('.search')
 
+const btnSearch = document.querySelector('.btn-search');
+const btnClean = document.querySelector('.btn-clean')
+
 // const btnSearch = document.querySelector()
 
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', submitQuery);
+btnSearch.addEventListener('click', submitQuery);
+btnClean.addEventListener('click', () => {
+  search.value.innerHTML = '';
+})
+
+
+function submitQuery(e) {
   e.preventDefault();
   const queryUrl = `${urlForSearch}${search.value}`;
   if (search.value) {
     getData(queryUrl)
-  }
-})
+}
+}
 
 async function getData(url) {
   const res = await fetch(url);
   const data = await res.json();
-
   showData(data);
 }
 
