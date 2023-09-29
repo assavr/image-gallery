@@ -1,9 +1,11 @@
-let url = 'https://api.unsplash.com/search/photos?per_page=30&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=cats';
+const url = 'https://api.unsplash.com/search/photos?per_page=30&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=cats';
 let urlForSearch = 'https://api.unsplash.com/search/photos?per_page=30&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=';
 const main = document.querySelector('.main');
 
 const form = document.querySelector('form')
 const search = document.querySelector('.search')
+
+// const btnSearch = document.querySelector()
 
 
 form.addEventListener('submit', (e) => {
