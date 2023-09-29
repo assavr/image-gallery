@@ -1,11 +1,20 @@
 let url = 'https://api.unsplash.com/search/photos?per_page=30&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=cats';
-
+let urlForSearch = 'https://api.unsplash.com/search/photos?per_page=30&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=';
 const main = document.querySelector('.main');
 
+const form = document.querySelector('form')
+const search = document.querySelector('.search')
 
 
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const queryUrl = `${urlForSearch}${search.value}`;
+  if (search.value) {
+    getData(queryUrl)
+  }
+})
 
-async function getData() {
+async function getData(url) {
   const res = await fetch(url);
   const data = await res.json();
 
@@ -14,8 +23,7 @@ async function getData() {
 
 
 function showData(data) {
-
-
+  main.innerHTML = '';
   data.results.forEach((e) => {
     const div = document.createElement('div');
     const img = document.createElement('img');
@@ -35,12 +43,8 @@ function showData(data) {
   // div.classList.add('block-img');
   // img.classList.add('img')
   // 
-
   // })
-
-
-
 
 }
 
-getData();
+getData(url);
