@@ -46,11 +46,13 @@ function showData(data) {
       blockImg.append(btnDownload);
       btnDownload.append(link);
       link.append(iconDownload);
+      img.classList.add('blur')
       }, 600) 
     })
     img.addEventListener('mouseout', () => {
       setTimeout( () => {
-        btnDownload.remove()
+        btnDownload.remove();
+        img.classList.remove('blur')
 
         }, 1300)
     })
