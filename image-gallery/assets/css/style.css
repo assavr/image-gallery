@@ -1,3 +1,7 @@
+html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
 body {
 /* color: #774c24; */
 background-color: rgb(231, 231, 231);
@@ -26,8 +30,8 @@ button {
 
 .header {
   display: flex;
-  gap:500px;
   align-items: center;
+  justify-content: space-between;
   height: 100px;
   margin-bottom: 50px;
 }
@@ -61,29 +65,26 @@ button {
   transition: 1s;
 }
 
-
-
-
-
 .form {
   display: flex;
   position: relative;
   align-items: center;
 }
 
-.btn {
+button {
   padding: 10px;
   position: absolute;
-  right: -10px;
   z-index: 10;
-  cursor: pointer;
-  
+  right: -20px;
+  cursor: pointer; 
 }
+
 path {
   transition: 1s;
 }
-.btn:hover path,
-.btn:active path {
+
+button:hover path,
+button:active path {
   fill: black;
 }
 
@@ -91,14 +92,36 @@ path {
 right: 30px;
 }
 
+.btn-search {
+  right: 30px;
+  }
 
-.main {
+
+.main-img {
   width: 100%;
   margin: 20px auto;
   columns: 4;
   column-gap: 40px;
 }
 
+.alert-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.height100 {
+  height: 100vh;
+}
+
+.text-alert {
+  text-align: center;
+  color:#868686;
+  font-size: 3em;
+}
+.change {
+  opacity: 1;
+  transition: all 1s;
+}
 .block-img {
   width: 100%;
   margin-bottom: 10px;
@@ -129,3 +152,5 @@ input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration { display: none; }
+
+
