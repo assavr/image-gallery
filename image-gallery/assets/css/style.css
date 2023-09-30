@@ -2,25 +2,27 @@ html {
   margin-left: calc(100vw - 100%);
   margin-right: 0;
 }
+
 body {
-/* color: #774c24; */
-background-color: rgb(231, 231, 231);
+  /* color: #774c24; */
+  background-color: rgb(231, 231, 231);
 }
 
-*{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 input {
   outline: none;
-  
+
 }
 
 button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -54,11 +56,13 @@ button {
   transform: scale(1);
   cursor: pointer;
 }
+
 .search::placeholder {
   color: #868686;
   font-size: 1em;
   transition: .5s;
 }
+
 .search:focus,
 .search:hover {
   transform: scale(1.1);
@@ -71,12 +75,12 @@ button {
   align-items: center;
 }
 
-button {
+.button {
   padding: 10px;
   position: absolute;
   z-index: 10;
   right: -20px;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 path {
@@ -89,12 +93,12 @@ button:active path {
 }
 
 .btn-search {
-right: 30px;
+  right: 30px;
 }
 
 .btn-search {
   right: 30px;
-  }
+}
 
 
 .main-img {
@@ -106,23 +110,36 @@ right: 30px;
 
 .alert-block {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  align-content: center;
+  gap: 20px;
 }
+
+
 .height100 {
   height: 100vh;
 }
 
 .text-alert {
   text-align: center;
-  color:#868686;
+  color: #868686;
   font-size: 3em;
+  opacity: 0;
 }
+
+.try-again {
+  text-decoration: underline;
+}
+
 .change {
   opacity: 1;
   transition: all 1s;
 }
+
 .block-img {
+  position: relative;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -144,13 +161,36 @@ right: 30px;
 }
 
 
-input[type=submit]::-ms-clear {  display: none; width : 0; height: 0; }
-input[type=submit]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type=submit]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=submit]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
 
 
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
-input::-webkit-search-results-decoration { display: none; }
+input::-webkit-search-results-decoration {
+  display: none;
+}
 
+/* .btn-download {
+  position: relative;
+  width: 100%;
+} */
+
+.icon-download {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
 
