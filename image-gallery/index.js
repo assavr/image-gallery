@@ -13,7 +13,7 @@ const textAlert = document.querySelector('.text-alert')
 async function getData(url) {
   const res = await fetch(url);
   const data = await res.json();
-  const isEmpty = data.results.length
+  const isEmpty = data.results.length;
   showData(data);
   hasInvalidSearch(isEmpty);
 }
@@ -46,13 +46,13 @@ function showData(data) {
       blockImg.append(btnDownload);
       btnDownload.append(link);
       link.append(iconDownload);
-      }, 500) 
+      }, 600) 
     })
     img.addEventListener('mouseout', () => {
       setTimeout( () => {
         btnDownload.remove()
 
-        }, 1000)
+        }, 1300)
     })
 
   })
@@ -71,13 +71,12 @@ function submitQuery(e) {
 form.addEventListener('submit', submitQuery);
 btnSearch.addEventListener('click', submitQuery);
 
+
 // checking for invalid value
 function hasInvalidSearch(isEmpty) {
   if (isEmpty === 0) {
     alertBlock.classList.add('height100');
     alertBlock.innerHTML = '<p class="text-alert change">Nothing was found for the query' + ' "' + search.value + '".' + 'Try again...</p>';
-    setTimeout(() => {textAlert.classList.add('change')}, 500)
   }
 }
-
 getData(urlDefault);
