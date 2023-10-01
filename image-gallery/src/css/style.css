@@ -16,7 +16,6 @@ body {
 
 input {
   outline: none;
-
 }
 
 button {
@@ -51,7 +50,7 @@ button {
   border: none;
   border-bottom: 2px solid #000000;
   font-size: 1.5em;
-  color: #333333;;
+  color: #333333;
   transition: 1s;
   transform: scale(1);
   cursor: pointer;
@@ -60,7 +59,7 @@ button {
 .search::placeholder {
   color: #868686;
   font-size: 1em;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .search:focus,
@@ -100,7 +99,6 @@ button:active path {
   right: 30px;
 }
 
-
 .main-img {
   width: 100%;
   margin: 20px auto;
@@ -117,7 +115,6 @@ button:active path {
   gap: 20px;
 }
 
-
 .height100 {
   height: 100vh;
 }
@@ -131,8 +128,6 @@ button:active path {
 .try-again {
   text-decoration: underline;
 }
-
-
 
 .block-img {
   position: relative;
@@ -154,19 +149,16 @@ button:active path {
   position: relative;
   z-index: 10;
   cursor: pointer;
-  
 }
 .blur {
   filter: blur(2px);
 }
 
-input[type=submit]::-ms-clear {
+input[type='submit']::-ms-clear {
   display: none;
   width: 0;
   height: 0;
 }
-
-
 
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
@@ -174,8 +166,6 @@ input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {
   display: none;
 }
-
-
 
 .icon-download {
   position: absolute;
