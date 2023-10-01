@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/css/normalize.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <link
@@ -16,7 +19,14 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <h1 class="heading">Image Gallery</h1>
+        <div class="header__promo">
+          <img
+            src="./src/img/290132_gallery_image_photo_photography_picture_icon.svg"
+            alt="logo"
+          />
+          <h1 class="heading">Image Gallery</h1>
+        </div>
+
         <form class="form">
           <input
             class="search"
@@ -27,8 +37,8 @@
           />
           <button class="btn-search button">
             <svg
-              width="21"
-              height="17"
+              width="30"
+              height="26"
               viewBox="0 0 21 17"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +53,8 @@
           </button>
           <button type="reset" class="btn-clean button">
             <svg
-              width="30"
-              height="30"
+              width="40"
+              height="40"
               viewBox="0 -0.5 25 25"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -67,11 +77,7 @@
       </header>
       <main class="main">
         <div class="alert-block"></div>
-        <div class="main-img">
-          <!-- <div class="block-img">
-          <img src="" alt="" class="img">
-        </div> -->
-        </div>
+        <div class="main-img"></div>
       </main>
       <footer></footer>
     </div>

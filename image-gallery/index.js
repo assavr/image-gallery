@@ -1,5 +1,5 @@
 const urlDefault =
-  'https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=random';
+  'https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=dark';
 const urlForSearch =
   'https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=';
 const alertBlock = document.querySelector('.alert-block');
@@ -7,53 +7,44 @@ const btnSearch = document.querySelector('.btn-search');
 const form = document.querySelector('.form');
 const mainImg = document.querySelector('.main-img');
 const search = document.querySelector('.search');
+
 // get data from API
-async function getData(url) {
+async function getImages(url) {
   const res = await fetch(url);
-  const data = await res.json();
-  const isEmpty = data.results.length;
-  showData(data);
-  hasInvalidSearch(isEmpty);
+  const apiAnswer = await res.json();
+  const lengthObjImages = apiAnswer.results.length;
+  showImages(apiAnswer);
+  hasInvalidSearch(lengthObjImages);
 }
 
 // show data on page
-function showData(data) {
+function showImages(apiAnswer) {
   mainImg.innerHTML = '';
   alertBlock.innerHTML = '';
   alertBlock.classList.remove('height100');
-  data.results.forEach((e) => {
+  apiAnswer.results.forEach((e) => {
     const blockImg = document.createElement('div');
     const img = document.createElement('img');
     const btnDownload = document.createElement('button');
-    const link = document.createElement('a');
-    const iconDownload = document.createElement('img');
+    const linkForDownload = document.createElement('a');
+    const arrowDownload = document.createElement('img');
     blockImg.classList.add('block-img');
     img.classList.add('img');
     mainImg.append(blockImg);
     blockImg.append(img);
-    img.setAttribute('alt', 'cats');
+    //new
+    blockImg.append(btnDownload);
+    btnDownload.append(linkForDownload);
+    linkForDownload.append(arrowDownload);
+    //new
+    img.setAttribute('alt', 'query images');
     img.src = e.urls.thumb;
     img.src = e.urls.regular;
-    link.href = e.links.download;
-    link.setAttribute('target', '_blank');
-    iconDownload.src = './src/img/download-icon.svg';
-    iconDownload.classList.add('icon-download');
+    linkForDownload.href = e.links.download;
+    linkForDownload.setAttribute('target', '_blank');
+    arrowDownload.src = './src/img/download-icon.svg';
+    arrowDownload.classList.add('icon-download');
     btnDownload.classList.add('btn-download');
-    blockImg.addEventListener('mouseover', () => {
-      setTimeout(() => {
-        blockImg.append(btnDownload);
-        btnDownload.append(link);
-        link.append(iconDownload);
-        img.classList.add('blur');
-      }, 600);
-    });
-
-    blockImg.addEventListener('mouseout', () => {
-      setTimeout(() => {
-        btnDownload.remove();
-        img.classList.remove('blur');
-      }, 1300);
-    });
   });
 }
 
@@ -62,7 +53,7 @@ function submitQuery(e) {
   e.preventDefault();
   const queryUrl = `${urlForSearch}${search.value}`;
   if (search.value) {
-    getData(queryUrl);
+    getImages(queryUrl);
   }
 }
 
@@ -70,8 +61,8 @@ form.addEventListener('submit', submitQuery);
 btnSearch.addEventListener('click', submitQuery);
 
 // checking for invalid value
-function hasInvalidSearch(isEmpty) {
-  if (isEmpty === 0) {
+function hasInvalidSearch(lengthObjImages) {
+  if (lengthObjImages === 0) {
     alertBlock.classList.add('height100');
     alertBlock.innerHTML =
       '<p class="text-alert change">Nothing was found for the query' +
@@ -81,4 +72,4 @@ function hasInvalidSearch(isEmpty) {
       'Try again...</p>';
   }
 }
-getData(urlDefault);
+getImages(urlDefault);

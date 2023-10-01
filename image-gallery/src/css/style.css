@@ -4,8 +4,9 @@ html {
 }
 
 body {
-  color: #333333;
-  background-color: rgb(231, 231, 231);
+  color: #868686;
+  background-color: rgb(0, 0, 0);
+  font-family: 'Montserrat', sans-serif;
 }
 
 * {
@@ -37,20 +38,27 @@ button {
   margin-bottom: 50px;
 }
 
+.header__promo{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .heading {
   margin: 0;
   font-size: 2em;
 }
 
 .search {
+  font-family: 'Montserrat', sans-serif;
   height: 50px;
   width: 500px;
   padding: 20px;
   background-color: inherit;
   border: none;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #868686;
   font-size: 1.5em;
-  color: #333333;
+  color: #d4d4d4;
   transition: 1s;
   transform: scale(1);
   cursor: pointer;
@@ -88,7 +96,7 @@ path {
 
 button:hover path,
 button:active path {
-  fill: black;
+  fill: rgb(255, 255, 255);
 }
 
 .btn-search {
@@ -140,7 +148,7 @@ button:active path {
   border-radius: 15px;
   transform: scale(1);
   transition: 1s;
-  box-shadow: 0px 10px 10px #aaa;
+  box-shadow: 9px 3px 15px #363636;
 }
 
 .block-img:hover .img {
@@ -174,4 +182,17 @@ input::-webkit-search-results-decoration {
   transform: translate(-50%, -50%);
   z-index: 20;
 }
+
+
+.btn-download{
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.block-img:hover .btn-download{
+  opacity: 1;
+  transition: opacity 1s
+}
+
+
 
