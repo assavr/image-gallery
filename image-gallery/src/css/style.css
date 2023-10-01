@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  /* color: #774c24; */
+  color: #333333;
   background-color: rgb(231, 231, 231);
 }
 
@@ -51,7 +51,7 @@ button {
   border: none;
   border-bottom: 2px solid #000000;
   font-size: 1.5em;
-  color: #000000;
+  color: #333333;;
   transition: 1s;
   transform: scale(1);
   cursor: pointer;
@@ -166,11 +166,6 @@ input[type=submit]::-ms-clear {
   height: 0;
 }
 
-input[type=submit]::-ms-reveal {
-  display: none;
-  width: 0;
-  height: 0;
-}
 
 
 input::-webkit-search-decoration,

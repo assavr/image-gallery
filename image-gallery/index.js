@@ -38,10 +38,10 @@ function showData(data) {
     img.src = e.urls.regular;
     link.href = e.links.download;
     link.setAttribute('target', '_blank')
-    iconDownload.src = './assets/img/download-icon.svg';
+    iconDownload.src = './src/img/download-icon.svg';
     iconDownload.classList.add('icon-download')
     btnDownload.classList.add('btn-download')
-    img.addEventListener('mouseover', () => {
+    blockImg.addEventListener('mouseover', () => {
       setTimeout( () => {
       blockImg.append(btnDownload);
       btnDownload.append(link);
@@ -49,7 +49,8 @@ function showData(data) {
       img.classList.add('blur')
       }, 600) 
     })
-    img.addEventListener('mouseout', () => {
+
+    blockImg.addEventListener('mouseout', () => {
       setTimeout( () => {
         btnDownload.remove();
         img.classList.remove('blur')
