@@ -3,7 +3,6 @@ const urlDefault =
 const urlForSearch =
   'https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=20YMWruSfryYAX6ydVUA7oHD71nN4Zu4J2sSnp-afwI&query=';
 const alertBlock = document.querySelector('.alert-block');
-const btnSearch = document.querySelector('.btn-search');
 const form = document.querySelector('.form');
 const mainImg = document.querySelector('.main-img');
 const search = document.querySelector('.search');
@@ -58,7 +57,7 @@ function submitQuery(e) {
 }
 
 form.addEventListener('submit', submitQuery);
-btnSearch.addEventListener('click', submitQuery);
+// btnSearch.addEventListener('click', submitQuery);
 
 // checking for invalid value
 function hasInvalidSearch(lengthObjImages) {
